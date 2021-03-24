@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://towardsdatascience.com/media/7ddbaf42f58f5c20b6a2906384bff193 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>riot_api_3 – Medium</title><meta name="description" content="You can&#39;t perform that action at this time. You signed in with another tab or window. You signed out in another tab or window. Reload to refresh your session. Reload to refresh your session."><meta name="twitter:widgets:csp" content="on"><meta name="robots" content="noindex"><!--<base target="_blank">--><base href="." target="_blank"><style>body {text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; font-family: "ff-tisa-web-pro", Georgia, Cambria, "Times New Roman", Times, serif; font-weight: 400; color: #333332; font-size: 18px; line-height: 1.4; margin: 0; background-color: white; overflow: hidden;}iframe {max-width: 100%;}</style></head><body><style>.gist .gist-file { margin-bottom: 0 !important; }.gist { text-rendering: auto; }</style><script src="./cfae01b11a5cfcb5112843ff74a0dcdb.js.download" charset="utf-8"></script><link rel="stylesheet" href="./gist-embed-fd43f22140a6ad2cc9d0aa1f169a01f3.css"><div id="gist101898116" class="gist">
+    <div class="gist-file">
+      <div class="gist-data">
+        <div class="js-gist-file-update-container js-task-list-container file-box">
+  <div id="file-riot_api_3-py" class="file my-2">
+    
+
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-python  ">
+      
+<table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip="">
+      <tbody><tr>
+        <td id="file-riot_api_3-py-L1" class="blob-num js-line-number" data-line-number="1"></td>
+        <td id="file-riot_api_3-py-LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">my_matches</span> <span class="pl-c1">=</span> <span class="pl-s1">watcher</span>.<span class="pl-s1">match</span>.<span class="pl-en">matchlist_by_account</span>(<span class="pl-s1">my_region</span>, <span class="pl-s1">me</span>[<span class="pl-s">'accountId'</span>])</td>
+      </tr>
+      <tr>
+        <td id="file-riot_api_3-py-L2" class="blob-num js-line-number" data-line-number="2"></td>
+        <td id="file-riot_api_3-py-LC2" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-riot_api_3-py-L3" class="blob-num js-line-number" data-line-number="3"></td>
+        <td id="file-riot_api_3-py-LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-c"># fetch last match detail</span></td>
+      </tr>
+      <tr>
+        <td id="file-riot_api_3-py-L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="file-riot_api_3-py-LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">last_match</span> <span class="pl-c1">=</span> <span class="pl-s1">my_matches</span>[<span class="pl-s">'matches'</span>][<span class="pl-c1">0</span>]</td>
+      </tr>
+      <tr>
+        <td id="file-riot_api_3-py-L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="file-riot_api_3-py-LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">match_detail</span> <span class="pl-c1">=</span> <span class="pl-s1">watcher</span>.<span class="pl-s1">match</span>.<span class="pl-en">by_id</span>(<span class="pl-s1">my_region</span>, <span class="pl-s1">last_match</span>[<span class="pl-s">'gameId'</span>])</td>
+      </tr>
+      <tr>
+        <td id="file-riot_api_3-py-L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="file-riot_api_3-py-LC6" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="file-riot_api_3-py-L7" class="blob-num js-line-number" data-line-number="7"></td>
+        <td id="file-riot_api_3-py-LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">participants</span> <span class="pl-c1">=</span> []</td>
+      </tr>
+      <tr>
+        <td id="file-riot_api_3-py-L8" class="blob-num js-line-number" data-line-number="8"></td>
+        <td id="file-riot_api_3-py-LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-k">for</span> <span class="pl-s1">row</span> <span class="pl-c1">in</span> <span class="pl-s1">match_detail</span>[<span class="pl-s">'participants'</span>]:</td>
+      </tr>
+      <tr>
+        <td id="file-riot_api_3-py-L9" class="blob-num js-line-number" data-line-number="9"></td>
+        <td id="file-riot_api_3-py-LC9" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">participants_row</span> <span class="pl-c1">=</span> {}</td>
+      </tr>
+      <tr>
+        <td id="file-riot_api_3-py-L10" class="blob-num js-line-number" data-line-number="10"></td>
+        <td id="file-riot_api_3-py-LC10" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">participants_row</span>[<span class="pl-s">'champion'</span>] <span class="pl-c1">=</span> <span class="pl-s1">row</span>[<span class="pl-s">'championId'</span>]</td>
+      </tr>
+      <tr>
+        <td id="file-riot_api_3-py-L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="file-riot_api_3-py-LC11" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">participants_row</span>[<span class="pl-s">'spell1'</span>] <span class="pl-c1">=</span> <span class="pl-s1">row</span>[<span class="pl-s">'spell1Id'</span>]</td>
+      </tr>
+      <tr>
+        <td id="file-riot_api_3-py-L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="file-riot_api_3-py-LC12" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">participants_row</span>[<span class="pl-s">'spell2'</span>] <span class="pl-c1">=</span> <span class="pl-s1">row</span>[<span class="pl-s">'spell2Id'</span>]</td>
+      </tr>
+      <tr>
+        <td id="file-riot_api_3-py-L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="file-riot_api_3-py-LC13" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">participants_row</span>[<span class="pl-s">'win'</span>] <span class="pl-c1">=</span> <span class="pl-s1">row</span>[<span class="pl-s">'stats'</span>][<span class="pl-s">'win'</span>]</td>
+      </tr>
+      <tr>
+        <td id="file-riot_api_3-py-L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="file-riot_api_3-py-LC14" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">participants_row</span>[<span class="pl-s">'kills'</span>] <span class="pl-c1">=</span> <span class="pl-s1">row</span>[<span class="pl-s">'stats'</span>][<span class="pl-s">'kills'</span>]</td>
+      </tr>
+      <tr>
+        <td id="file-riot_api_3-py-L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="file-riot_api_3-py-LC15" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">participants_row</span>[<span class="pl-s">'deaths'</span>] <span class="pl-c1">=</span> <span class="pl-s1">row</span>[<span class="pl-s">'stats'</span>][<span class="pl-s">'deaths'</span>]</td>
+      </tr>
+      <tr>
+        <td id="file-riot_api_3-py-L16" class="blob-num js-line-number" data-line-number="16"></td>
+        <td id="file-riot_api_3-py-LC16" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">participants_row</span>[<span class="pl-s">'assists'</span>] <span class="pl-c1">=</span> <span class="pl-s1">row</span>[<span class="pl-s">'stats'</span>][<span class="pl-s">'assists'</span>]</td>
+      </tr>
+      <tr>
+        <td id="file-riot_api_3-py-L17" class="blob-num js-line-number" data-line-number="17"></td>
+        <td id="file-riot_api_3-py-LC17" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">participants_row</span>[<span class="pl-s">'totalDamageDealt'</span>] <span class="pl-c1">=</span> <span class="pl-s1">row</span>[<span class="pl-s">'stats'</span>][<span class="pl-s">'totalDamageDealt'</span>]</td>
+      </tr>
+      <tr>
+        <td id="file-riot_api_3-py-L18" class="blob-num js-line-number" data-line-number="18"></td>
+        <td id="file-riot_api_3-py-LC18" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">participants_row</span>[<span class="pl-s">'goldEarned'</span>] <span class="pl-c1">=</span> <span class="pl-s1">row</span>[<span class="pl-s">'stats'</span>][<span class="pl-s">'goldEarned'</span>]</td>
+      </tr>
+      <tr>
+        <td id="file-riot_api_3-py-L19" class="blob-num js-line-number" data-line-number="19"></td>
+        <td id="file-riot_api_3-py-LC19" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">participants_row</span>[<span class="pl-s">'champLevel'</span>] <span class="pl-c1">=</span> <span class="pl-s1">row</span>[<span class="pl-s">'stats'</span>][<span class="pl-s">'champLevel'</span>]</td>
+      </tr>
+      <tr>
+        <td id="file-riot_api_3-py-L20" class="blob-num js-line-number" data-line-number="20"></td>
+        <td id="file-riot_api_3-py-LC20" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">participants_row</span>[<span class="pl-s">'totalMinionsKilled'</span>] <span class="pl-c1">=</span> <span class="pl-s1">row</span>[<span class="pl-s">'stats'</span>][<span class="pl-s">'totalMinionsKilled'</span>]</td>
+      </tr>
+      <tr>
+        <td id="file-riot_api_3-py-L21" class="blob-num js-line-number" data-line-number="21"></td>
+        <td id="file-riot_api_3-py-LC21" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">participants_row</span>[<span class="pl-s">'item0'</span>] <span class="pl-c1">=</span> <span class="pl-s1">row</span>[<span class="pl-s">'stats'</span>][<span class="pl-s">'item0'</span>]</td>
+      </tr>
+      <tr>
+        <td id="file-riot_api_3-py-L22" class="blob-num js-line-number" data-line-number="22"></td>
+        <td id="file-riot_api_3-py-LC22" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">participants_row</span>[<span class="pl-s">'item1'</span>] <span class="pl-c1">=</span> <span class="pl-s1">row</span>[<span class="pl-s">'stats'</span>][<span class="pl-s">'item1'</span>]</td>
+      </tr>
+      <tr>
+        <td id="file-riot_api_3-py-L23" class="blob-num js-line-number" data-line-number="23"></td>
+        <td id="file-riot_api_3-py-LC23" class="blob-code blob-code-inner js-file-line">    <span class="pl-s1">participants</span>.<span class="pl-en">append</span>(<span class="pl-s1">participants_row</span>)</td>
+      </tr>
+      <tr>
+        <td id="file-riot_api_3-py-L24" class="blob-num js-line-number" data-line-number="24"></td>
+        <td id="file-riot_api_3-py-LC24" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">df</span> <span class="pl-c1">=</span> <span class="pl-s1">pd</span>.<span class="pl-v">DataFrame</span>(<span class="pl-s1">participants</span>)</td>
+      </tr>
+      <tr>
+        <td id="file-riot_api_3-py-L25" class="blob-num js-line-number" data-line-number="25"></td>
+        <td id="file-riot_api_3-py-LC25" class="blob-code blob-code-inner js-file-line"><span class="pl-s1">df</span></td>
+      </tr>
+</tbody></table>
+
+
+  </div>
+
+  </div>
+</div>
+
+      </div>
+      <div class="gist-meta">
+        <a href="https://gist.github.com/BarneyH19/cfae01b11a5cfcb5112843ff74a0dcdb/raw/13bdfd83b5b4caecfbd88824f11dd3c20019d1ac/riot_api_3.py" style="float:right">view raw</a>
+        <a href="https://gist.github.com/BarneyH19/cfae01b11a5cfcb5112843ff74a0dcdb#file-riot_api_3-py">riot_api_3.py</a>
+        hosted with ❤ by <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+</div>
+<script>var height = -1; var delayMs = 200; if (document) {document.domain = document.domain;}function notifyResize(height) {height = height ? height : document.documentElement.offsetHeight; var resized = false; if (window.donkey && donkey.resize) {donkey.resize(height);var elements = document.getElementsByClassName("gist-data"); for (var i = 0; i < elements.length; i++) {elements[i].style.overflow = "visible"}resized = true;}if (parent && parent._resizeIframe) {var obj = {iframe: window.frameElement, height: height}; parent._resizeIframe(obj); resized = true;}if (window.location && window.location.hash === "#amp=1" && window.parent && window.parent.postMessage) {window.parent.postMessage({sentinel: "amp", type: "embed-size", height: height}, "*");}if (window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.resize) {window.webkit.messageHandlers.resize.postMessage(height); resized = true;}return resized;}function maybeResize() {try {if (document.documentElement.offsetHeight != height && notifyResize()) {height = document.documentElement.offsetHeight;}delayMs = Math.min(delayMs * 2, 1000000); setTimeout(maybeResize, delayMs);} catch(error) {console.log('maybeResize error: ', error)}}maybeResize();</script></body></html>
