@@ -1,2 +1,0 @@
-string_ID = 'HULKSMASH1337' #HULKSMASH1337, SentientAI, slinky boy
-api_key = 'RGAPI-a4de2f58-c735-4172-a0fc-f8e553c47bc0'
