@@ -1,13 +1,15 @@
 # ML-and-League-of-Legends                                                      
 Using ML to predict outcomes of any summoner in league of legends, as well as getting the features that affect their
 I used a Decision Tree Classifier 
-
-## Usage
-There are two ways of executed the code:terminal or Notebook.
-
-Execute the [tyler1_predictor_win_loss.py](https://github.com/bszek213/ML-and-League-of-Legends/blob/main/tyler1_predictor_win_loss.py) script in your terminal:
+## Installation
+First install all the packages with the following command:
 ```bash
-$ python tyler1_predictor_win_loss.py "Your-Riot-API" "Summoner_Name_that_you_want_to_eval"
+pip install -r requirements.txt
 ```
-OR with the [tyler1_predictor_win_loss.ipynb](https://github.com/bszek213/ML-and-League-of-Legends/blob/main/tyler1_predictor_win_loss.ipynb) file.
+## Usage
+There are two ways of executed the code:terminal.
 
+Execute the [main_league.py](https://github.com/bszek213/ML-and-League-of-Legends/blob/main/main_league.py) script in your terminal:
+```bash
+$ python main_leauge.py "Your-Riot-API" "Summoner_Name"
+```
