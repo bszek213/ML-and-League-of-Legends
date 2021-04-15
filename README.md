@@ -11,5 +11,5 @@ There are two ways of executed the code:terminal.
 
 Execute the [main_league.py](https://github.com/bszek213/ML-and-League-of-Legends/blob/main/main_league.py) script in your terminal:
 ```bash
-$ python main_leauge.py "Your-Riot-API" "Summoner_Name"
+$ python main_league.py "Your-Riot-API" "Summoner_Name"
 ```
