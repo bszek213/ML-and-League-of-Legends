@@ -7,6 +7,11 @@ from sklearn.metrics import classification_report
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+def which_region():
+    print('Which region do you want, na1 or euw1?')
+    region_input = input('Enter region:')
+    return region_input
+
 def import_data():
     arguments = len(sys.argv) - 1
     position = 1

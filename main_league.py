@@ -2,7 +2,8 @@ import helper
 import time
 start_time = time.perf_counter()
 api,summoner_string = helper.import_data()
-my_region = 'na1'
+#my_region = 'na1'
+my_region = helper.which_region()
 #Class Instantiation
 riot = helper.RiotAccount(api,summoner_string,my_region)
 #call methods
