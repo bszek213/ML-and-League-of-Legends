@@ -3,7 +3,8 @@
 from riotwatcher import LolWatcher, ApiError
 import pandas as pd
 import sys
-
+import time
+start_time = time.perf_counter()
  # Count the arguments
 arguments = len(sys.argv) - 1
 # Output argument-wise
@@ -39,10 +40,10 @@ for allMatch in range(count-1):
     last_match = my_matches['matches'][allMatch]
     match_detail = watcher.match.by_id(my_region, last_match['gameId'])
     find_tyler = match_detail['participants']
-    for names in match_detail['participantIdentities']:                     
-        rowSum = {}                                                         
-        rowSum['Game #'] = allMatch                                         
-        rowSum['Participant ID']= names['participantId']                    
+    for names in match_detail['participantIdentities']:
+        rowSum = {}
+        rowSum['Game #'] = allMatch
+        rowSum['Participant ID']= names['participantId']
         rowSum['Summoner Name'] = names['player']['summonerName']
         if names['player']['summonerName'] == string_ID:
             summoner_ID = rowSum['Participant ID']
@@ -105,7 +106,7 @@ sns.barplot(x=feature_imp,y=feature_imp.index)
 plt.xlabel('Feature Importance')
 plt.ylabel('Features')
 plt.title(string_ID)
-
+plt.show() 
 
 # df2 = data_transformed_df.iloc[[0]]
 # DF1 = df2.drop(columns=['outcome'])
@@ -119,12 +120,8 @@ if y_pred == 1:
     print('The predicted outcome of the next game based on aggregate data over 5 games will be a win')
 else:
     print('The predicted outcome of the next game based on aggregate data over 5 games will be a loss')
-
-
-
+end_time = time.perf_counter()
+total_time = end_time-start_time
+print(f"Time to excute full code: {end_time-start_time:0.4f}")
 #watcher.spectator.by_summoner(my_region,lol_tyler_1['id'])
 #plt.plot(y_test,'o', color='black')
-
-
-
-
