@@ -78,6 +78,7 @@ class RiotAccount:
                             summoner_stats['Damage to Champs'] = stats_row['totalDamageDealtToChampions']
                             summoner_stats['Gold Earned'] = stats_row['goldEarned']
                             summoner_stats['total Minions'] = stats_row['totalMinionsKilled']
+                            summoner_stats['Damage Taken'] = stats_row['totalDamageTaken']
                             all_data[counter] = summoner_stats
                             counter += 1
                             #print(counter)
@@ -87,7 +88,7 @@ class RiotAccount:
     def Decision_Tree_Class(self,data_transformed_df):
         x = data_transformed_df[['kills','deaths','assists','total Damage Dealt',
                                  'Objective Damage','Damage to Champs',
-                                'Gold Earned','total Minions']]
+                                'Gold Earned','total Minions','Damage Taken']]
         y = data_transformed_df['outcome']
         x_train,X_test,y_train,y_test = train_test_split(x,y)
         model = DecisionTreeClassifier()
